@@ -1,0 +1,3 @@
+[submodule "client/lib/fingerprintjs2"]
+	path = client/lib/fingerprintjs2
+	url = https://github.com/Valve/fingerprintjs2.git

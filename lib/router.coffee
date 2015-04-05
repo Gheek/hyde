@@ -1,9 +1,9 @@
 Router.configure
-  layoutTemplate: 'body'
+  layoutTemplate: 'nav'
 
 Router.route '/', () ->
-  @render('hello')
+  @render 'hello', to: 'content'
 
 Router.route 'test', () ->
-  @render('test')
+  @render 'test', to: 'content'
 

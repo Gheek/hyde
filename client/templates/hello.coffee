@@ -11,3 +11,8 @@ if Meteor.isClient
     'click button': () ->
       # increment the counter when button is clicked
       Session.set('counter', Session.get('counter') + 1)
+
+    'click #fp': () ->
+      new Fingerprint2().get (result) ->
+        console.log result
+

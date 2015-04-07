@@ -7,3 +7,5 @@ Router.route '/', () ->
 Router.route 'test', () ->
   @render 'test', to: 'content'
 
+Router.route 'fingerprint', () ->
+  @render 'fingerprint', to: 'content'

@@ -1,5 +1,7 @@
 Router.configure
   layoutTemplate: 'nav'
+  waitOn: () ->
+    return [Meteor.subscribe('fingerprints')]
 
 Router.route '/', () ->
   @render 'hello', to: 'content'

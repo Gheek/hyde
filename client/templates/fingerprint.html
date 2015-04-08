@@ -4,24 +4,51 @@
         <div class="container">
             <h1>result</h1>
 
-            <p>Your result is: {{getFingerprint}}</p>
+            <div class="well">
+                {{#each getFingerprint}}
+                    <p>browser fingerprint: {{browserFP}}</p>
 
-            <p><a class="btn btn-primary" href="/" role="button">back to start</a></p>
+                    <p>canvas fingerprint: {{canvasFP}}</p>
+
+                    <p>webgl fingerprint: {{webglFP}}</p>
+                {{/each}}
+            </div>
+
+            <div class="row">
+                <div class="col-md-1"><a id="save-button" class="btn btn-success" href="#" role="button">save</a></div>
+                <div class="col-md-1"><a class="btn btn-primary" href="/" role="button">back to start</a></div>
+            </div>
         </div>
     </div>
 
     <div class="container">
         <h2>collected fingerprints</h2>
-        <button>save the fingerprint</button>
-        <ul>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#id</th>
+                <th>Browser Fingerprint</th>
+                <th>Canvas Fingerprint</th>
+                <th>WebGL Fingerprint</th>
+            </tr>
+            </thead>
+            <tbody>
+
             {{#each fingerprints}}
-                {{> fp}}
+                {{> tr}}
             {{/each}}
-        </ul>
+
+            </tbody>
+        </table>
     </div>
 
 </template>
 
-<template name="fp">
-    <li>{{fp}}</li>
+<template name="tr">
+    <tr>
+        <th scope="row">{{_id}}</th>
+        <td>{{browserFP}}</td>
+        <td>{{canvasFP}}</td>
+        <td>{{webglFP}}</td>
+    </tr>
 </template>

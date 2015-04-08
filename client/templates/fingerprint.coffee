@@ -22,4 +22,4 @@ Template.fingerprint.events
 
   'click #save-button': () ->
     fingerprint = Session.get('fingerprint')
-    Fingerprints.insert fingerprint
+    Meteor.call('saveFingerprint', fingerprint)

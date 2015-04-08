@@ -36,24 +36,30 @@
 
     <div class="container">
         <h2>collected fingerprints</h2>
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>#id</th>
-                <th>Browser Fingerprint</th>
-                <th>Canvas Fingerprint</th>
-                <th>WebGL Fingerprint</th>
-            </tr>
-            </thead>
-            <tbody>
-
-            {{#each fingerprints}}
-                {{> tr}}
-            {{/each}}
-
-            </tbody>
-        </table>
     </div>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-hover table-condensed table-striped">
+                <thead>
+                <tr>
+                    <th>#id</th>
+                    <th>Browser Fingerprint</th>
+                    <th>Canvas Fingerprint</th>
+                    <th>WebGL Fingerprint</th>
+                    <th>Augur Fingerprint</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {{#each fingerprints}}
+                    {{> tr}}
+                {{/each}}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
 
 </template>
 
@@ -63,5 +69,6 @@
         <td>{{browserFP}}</td>
         <td>{{canvasFP}}</td>
         <td>{{webglFP}}</td>
+        <td>{{augurFP}}</td>
     </tr>
 </template>

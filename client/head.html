@@ -6,4 +6,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>hyde.js - Device Fingerprinting Assessment Platform</title>
+
+    <!-- include augur.io fingerprinting -->
+
+    <script>
+        function augurCallback(json) {
+            console.log("Here's data about the device =>", json.device);
+            console.log("Here's the fingerprint =>", json.device.fingerprint);
+            console.log("Here's the device ID =>", json.device.ID);
+            Session.set('augur', json.device.ID);
+        }
+    </script>
+    <script id="augur.js" async src="//cdn.augur.io/augur.min.js" data-callback="augurCallback"
+            data-warpspeed="1A"></script>
 </head>

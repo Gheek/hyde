@@ -10,3 +10,5 @@ insecure
 twbs:bootstrap
 coffeescript
 iron:router
+accounts-password
+ian:accounts-ui-bootstrap-3

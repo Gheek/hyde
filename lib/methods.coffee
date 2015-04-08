@@ -1,6 +1,7 @@
 Meteor.methods
 
-  saveFingerprint: (fingerprint) ->
+  saveFingerprint: (fingerprint, nickname) ->
     if (!Meteor.userId())
       throw new Meteor.Error "not-authorized"
-    Fingerprints.insert fingerprint
+    insert = {nickname: nickname, browserFP: fingerprint.browserFP, canvasFP: fingerprint.canvasFP, webglFP: fingerprint.webglFP}
+    Fingerprints.insert insert

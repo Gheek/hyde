@@ -20,6 +20,9 @@ Template.fingerprint.helpers
 
 Template.fingerprint.events
 
-  'click #save-button': () ->
+  "submit #nickname": (event) ->
     fingerprint = Session.get('fingerprint')
-    Meteor.call('saveFingerprint', fingerprint)
+    nickname = event.target.nickname.value;
+    Meteor.call('saveFingerprint', fingerprint, nickname)
+    event.target.nickname.value = ''
+    return false

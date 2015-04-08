@@ -14,10 +14,23 @@
                 {{/each}}
             </div>
 
-            <div class="row">
-                <div class="col-md-1"><a id="save-button" class="btn btn-success" href="#" role="button">save</a></div>
-                <div class="col-md-1"><a class="btn btn-primary" href="/" role="button">back to start</a></div>
-            </div>
+            <form id="nickname">
+                <div class="row">
+                    <div class="form-group col-md-3">
+                        <label for="InputNickname">Nickname</label>
+                        <input name="nickname" type="text" class="form-control" id="InputNickname"
+                               placeholder="Enter nickname">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <button id="save-button" class="btn btn-success" type="submit">save</button>
+                    </div>
+                    <div class="col-md-1"><a class="btn btn-danger" href="/" role="button">cancel</a></div>
+                </div>
+            </form>
+
+
         </div>
     </div>
 
@@ -46,7 +59,7 @@
 
 <template name="tr">
     <tr>
-        <th scope="row">{{_id}}</th>
+        <th scope="row">{{nickname}}</th>
         <td>{{browserFP}}</td>
         <td>{{canvasFP}}</td>
         <td>{{webglFP}}</td>

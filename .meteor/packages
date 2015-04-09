@@ -10,3 +10,8 @@ coffeescript
 iron:router
 accounts-password
 ian:accounts-ui-bootstrap-3
+yogiben:admin
+aldeed:simple-schema
+aldeed:autoform
+alanning:roles
+aldeed:collection2

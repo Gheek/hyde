@@ -22,8 +22,7 @@ Template.fingerprint.events
 
   "submit #nickname": (event) ->
     fingerprint = Session.get('fingerprint')
-    augur = Session.get('augur')
     nickname = event.target.nickname.value;
-    Meteor.call('saveFingerprint', fingerprint, nickname, augur)
+    Meteor.call('saveFingerprint', fingerprint, nickname)
     event.target.nickname.value = ''
     return false

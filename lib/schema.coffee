@@ -18,9 +18,5 @@ Schemas.Fingerprints = new SimpleSchema
     type: String
     max: 60
     optional: true
-  augurFP:
-    type: String
-    max: 60
-    optional: true
 
 Fingerprints.attachSchema(Schemas.Fingerprints)

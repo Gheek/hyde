@@ -5,15 +5,10 @@
             <h1>result</h1>
 
             <div class="well">
-                {{#each getFingerprint}}
-                    <p>browser fingerprint: {{browserFP}}</p>
 
-                    <p>canvas fingerprint: {{canvasFP}}</p>
-
-                    <p>webgl fingerprint: {{webglFP}}</p>
-                {{/each}}
             </div>
 
+            <h3>save fingerprint</h3>
             <form id="nickname">
                 <div class="row">
                     <div class="form-group col-md-3">
@@ -35,25 +30,24 @@
     </div>
 
     <div class="container">
-        <h2>collected fingerprints</h2>
+        <h2>collected data</h2>
     </div>
     <div class="container">
         <div class="table-responsive">
             <table class="table table-hover table-condensed table-striped">
                 <thead>
                 <tr>
-                    <th>#id</th>
-                    <th>Browser Fingerprint</th>
-                    <th>Canvas Fingerprint</th>
-                    <th>WebGL Fingerprint</th>
+                    <th>Data</th>
+                    <th>Value</th>
                 </tr>
                 </thead>
                 <tbody>
-
-                {{#each fingerprints}}
-                    {{> tr}}
+                {{#each getFingerprint}}
+                {{> tr}}
                 {{/each}}
-
+                {{#each getImages}}
+                {{> images}}
+                {{/each}}
                 </tbody>
             </table>
         </div>
@@ -64,9 +58,14 @@
 
 <template name="tr">
     <tr>
-        <th scope="row">{{nickname}}</th>
-        <td>{{browserFP}}</td>
-        <td>{{canvasFP}}</td>
-        <td>{{webglFP}}</td>
+        <th scope="row">{{key}}</th>
+        <td>{{value}}</td>
+    </tr>
+</template>
+
+<template name="images">
+    <tr>
+        <th scope="row">{{type}}</th>
+        <td><img src={{src}} style="max-height:100px;"/></td>
     </tr>
 </template>
